@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F8F9FA">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbarCalculator"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#2E7D32"
+        app:titleTextColor="@android:color/white"
+        app:navigationIcon="?attr/homeAsUpIndicator"
+        app:navigationIconTint="@android:color/white" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/tvHeaderInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Judul Halaman"
+                android:textStyle="italic"
+                android:textColor="#757575"
+                android:gravity="center"
+                android:layout_marginBottom="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kalkulator Geometri"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#212121"
+                android:layout_marginBottom="24dp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                android:layout_marginBottom="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Luas Segitiga"
+                        android:textStyle="bold"
+                        android:textColor="#3D5AFE"
+                        android:layout_marginBottom="12dp"/>
+
+                    <EditText
+                        android:id="@+id/etAlas"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="Masukkan Alas"
+                        android:inputType="numberDecimal"
+                        android:background="@drawable/bg_input_field"
+                        android:paddingHorizontal="12dp"
+                        android:layout_marginBottom="8dp"/>
+
+                    <EditText
+                        android:id="@+id/etTinggi"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="Masukkan Tinggi"
+                        android:inputType="numberDecimal"
+                        android:background="@drawable/bg_input_field"
+                        android:paddingHorizontal="12dp"
+                        android:layout_marginBottom="12dp"/>
+
+                    <Button
+                        android:id="@+id/btnHitungSegitiga"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Hitung Luas"
+                        android:backgroundTint="#3D5AFE"/>
+
+                    <TextView
+                        android:id="@+id/tvHasilSegitiga"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Hasil: -"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                android:layout_marginBottom="40dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Volume Balok"
+                        android:textStyle="bold"
+                        android:textColor="#2E7D32"
+                        android:layout_marginBottom="12dp"/>
+
+                    <EditText
+                        android:id="@+id/etPanjang"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="Panjang"
+                        android:inputType="numberDecimal"
+                        android:background="@drawable/bg_input_field"
+                        android:paddingHorizontal="12dp"
+                        android:layout_marginBottom="8dp"/>
+
+                    <EditText
+                        android:id="@+id/etLebar"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="Lebar"
+                        android:inputType="numberDecimal"
+                        android:background="@drawable/bg_input_field"
+                        android:paddingHorizontal="12dp"
+                        android:layout_marginBottom="8dp"/>
+
+                    <EditText
+                        android:id="@+id/etTinggiBalok"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="Tinggi"
+                        android:inputType="numberDecimal"
+                        android:background="@drawable/bg_input_field"
+                        android:paddingHorizontal="12dp"
+                        android:layout_marginBottom="12dp"/>
+
+                    <Button
+                        android:id="@+id/btnHitungBalok"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Hitung Volume"
+                        android:backgroundTint="#2E7D32"/>
+
+                    <TextView
+                        android:id="@+id/tvHasilBalok"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Hasil: -"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
