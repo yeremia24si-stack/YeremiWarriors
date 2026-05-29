@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.YeremiWarriors">
         <activity
+            android:name=".Home.pertemuan_10.TenthActivity"
+            android:exported="false" />
+        <activity
             android:name=".SplashScreenActivity"
             android:exported="false" />
         <activity
