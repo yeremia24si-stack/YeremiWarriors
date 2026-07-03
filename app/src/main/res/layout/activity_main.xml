@@ -21,7 +21,7 @@
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="@color/text_primary"
-            android:layout_marginBottom="8dp"/>
+            android:layout_marginBottom="8dp" />
 
         <TextView
             android:id="@+id/tvDescMain"
@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:text="Silahkan pilih menu di bawah ini"
             android:textColor="@color/text_secondary"
-            android:layout_marginBottom="32dp"/>
+            android:layout_marginBottom="32dp" />
 
         <Button
             android:id="@+id/btnRumus"
@@ -37,7 +37,7 @@
             android:layout_height="60dp"
             android:text="Rumus Bangun Ruang"
             android:backgroundTint="@color/primary"
-            android:layout_marginBottom="12dp"/>
+            android:layout_marginBottom="12dp" />
 
         <Button
             android:id="@+id/btnCustom1"
@@ -45,7 +45,7 @@
             android:layout_height="60dp"
             android:text="Halaman Welcome (Custom 1)"
             android:backgroundTint="@color/primary"
-            android:layout_marginBottom="12dp"/>
+            android:layout_marginBottom="12dp" />
 
         <Button
             android:id="@+id/btnCustom2"
@@ -53,7 +53,7 @@
             android:layout_height="60dp"
             android:text="Halaman Info (Custom 2)"
             android:backgroundTint="@color/primary"
-            android:layout_marginBottom="12dp"/>
+            android:layout_marginBottom="12dp" />
 
         <Button
             android:id="@+id/btnWebView"
@@ -61,7 +61,17 @@
             android:layout_height="60dp"
             android:text="Bina Desa (WebView)"
             android:backgroundTint="@color/primary"
-            android:layout_marginBottom="12dp"/>
+            android:layout_marginBottom="12dp" />
+
+        <!-- Tombol Pertemuan 4 -->
+        <Button
+            android:id="@+id/btnToFourth"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Pertemuan 4 - Desa Wisata"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@color/hijau_desa"
+            android:layout_marginBottom="12dp" />
 
         <Button
             android:id="@+id/btnLogout"
@@ -69,7 +79,8 @@
             android:layout_height="60dp"
             android:text="Logout"
             android:backgroundTint="#E91E63"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp" />
 
     </LinearLayout>
+
 </ScrollView>

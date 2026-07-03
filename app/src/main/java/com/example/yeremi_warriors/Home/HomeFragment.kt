@@ -10,6 +10,10 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.yeremi_warriors.Home.CalculatorActivity
+import com.example.yeremi_warriors.Home.pertemuan_3.ThirdActivity
+import com.example.yeremi_warriors.Home.pertemuan_4.FourthActivity
+import com.example.yeremi_warriors.Home.pertemuan_5.FifthActivity
+import com.example.yeremi_warriors.Home.pertemuan_10.TenthActivity
 import com.example.yeremi_warriors.LoginActivity
 import com.example.yeremi_warriors.databinding.FragmentHomeBinding
 import com.google.android.material.snackbar.Snackbar
@@ -56,6 +60,22 @@ class HomeFragment : Fragment() {
 
         binding.btnWebView.setOnClickListener {
             startActivity(Intent(requireContext(), WebViewActivity::class.java))
+        }
+
+        binding.btnPertemuan3.setOnClickListener {
+            startActivity(Intent(requireContext(), ThirdActivity::class.java))
+        }
+
+        binding.btnPertemuan4.setOnClickListener {
+            startActivity(Intent(requireContext(), FourthActivity::class.java))
+        }
+
+        binding.btnPertemuan5.setOnClickListener {
+            startActivity(Intent(requireContext(), FifthActivity::class.java))
+        }
+
+        binding.btnPertemuan10.setOnClickListener {
+            startActivity(Intent(requireContext(), TenthActivity::class.java))
         }
 
         binding.btnLogout.setOnClickListener {

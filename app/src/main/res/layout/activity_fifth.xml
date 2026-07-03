@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- ══════════════════════════════════ -->
+    <!--   AppBarLayout + Toolbar          -->
+    <!-- ══════════════════════════════════ -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:titleTextColor="@android:color/white"
+            app:subtitleTextColor="@android:color/white"
+            app:layout_scrollFlags="scroll|enterAlways" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- ══════════════════════════════════ -->
+    <!--   NestedScrollView — Konten Desa  -->
+    <!-- ══════════════════════════════════ -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:clipToPadding="false"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <!-- Tombol ke WebView -->
+            <Button
+                android:id="@+id/btnWebView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🌐 Kunjungi Website Wisata"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#2E7D32"
+                android:layout_marginBottom="20dp"
+                app:icon="@drawable/ic_add"
+                app:iconGravity="textStart" />
+
+            <!-- ── Paragraf Konten Scrollable (tema Desa Wisata) ── -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🌿 Tentang Desa Wisata Nusantara"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#1B5E20"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="#424242"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginTop="8dp"
+                android:text="Desa Wisata Nusantara adalah destinasi wisata yang menawarkan pengalaman autentik kehidupan pedesaan Indonesia. Terletak di antara hamparan sawah hijau dan perbukitan yang asri, desa ini menjadi surga tersembunyi bagi para wisatawan yang ingin merasakan ketenangan alam dan kearifan lokal." />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="#424242"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginTop="20dp"
+                android:text="🏞️ Keindahan Alam\n\nPemandangan alam desa ini sungguh memukau. Hamparan sawah terasering yang mengalir indah, sungai jernih yang membelah desa, serta pegunungan yang menjulang tinggi menjadi latar belakang yang sempurna untuk menikmati keindahan alam Indonesia." />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="#424242"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginTop="20dp"
+                android:text="🎭 Budaya dan Tradisi\n\nMasyarakat desa masih menjaga tradisi leluhur dengan penuh kebanggaan. Berbagai pertunjukan seni tradisional seperti tari-tarian daerah, musik gamelan, dan upacara adat masih rutin digelar sebagai bagian dari kehidupan sehari-hari warga desa." />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="#424242"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginTop="20dp"
+                android:text="🍜 Kuliner Khas\n\nCita rasa masakan khas desa tidak ada duanya. Dari nasi liwet yang dimasak dengan kayu bakar, sayur lodeh segar dari kebun sendiri, hingga jajanan pasar tradisional yang menggugah selera — semuanya tersedia dan siap memanjakan lidah para pengunjung." />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="#424242"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginTop="20dp"
+                android:text="🌾 Wisata Edukasi Pertanian\n\nPengunjung dapat merasakan langsung pengalaman bertani bersama warga desa. Mulai dari menanam padi, memanen sayuran organik, hingga belajar membuat pupuk kompos secara alami. Kegiatan ini sangat populer di kalangan wisatawan keluarga dan pelajar." />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="#424242"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginTop="20dp"
+                android:text="🏡 Homestay dan Penginapan\n\nBagi yang ingin merasakan pengalaman menginap di desa, tersedia berbagai pilihan homestay yang dikelola langsung oleh warga setempat. Fasilitas sederhana namun bersih dengan suasana kekeluargaan yang hangat menjadi daya tarik tersendiri bagi wisatawan." />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="#424242"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginTop="20dp"
+                android:text="🚴 Aktivitas Seru\n\nTersedia berbagai aktivitas menarik yang bisa dinikmati pengunjung, antara lain: bersepeda keliling desa, trekking menyusuri hutan bambu, river tubing di sungai yang jernih, serta workshop kerajinan tangan dari bahan alam yang dipandu langsung oleh pengrajin lokal." />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="#424242"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginTop="20dp"
+                android:text="📍 Cara Menuju Desa\n\nDesa Wisata Nusantara dapat ditempuh dengan kendaraan pribadi maupun angkutan umum. Dari pusat kota Pekanbaru, perjalanan memakan waktu sekitar 1,5 jam melewati jalan raya yang mulus. Tersedia juga layanan antar-jemput dari beberapa titik di kota." />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="#424242"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginTop="20dp"
+                android:text="📞 Kontak dan Informasi\n\nUntuk pemesanan paket wisata dan informasi lebih lanjut, silakan hubungi pengelola Desa Wisata Nusantara melalui nomor telepon atau media sosial resmi kami. Tim kami siap membantu Anda merencanakan liburan yang tak terlupakan bersama keluarga." />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="#424242"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="32dp"
+                android:text="🌟 Testimoni Pengunjung\n\n&quot;Pengalaman luar biasa! Anak-anak saya sangat menikmati aktivitas bertani dan kegiatan alam di sini. Pasti akan kembali lagi!&quot; — Keluarga Siregar, Medan\n\n&quot;Suasana desa yang tenang dan masakan tradisionalnya membuat saya betah berlama-lama. Ini adalah liburan terbaik yang pernah saya rasakan.&quot; — Budi, Jakarta" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -108,6 +108,62 @@
                 app:layout_constraintTop_toBottomOf="@id/btnCustom2" />
 
             <Button
+                android:id="@+id/btnPertemuan3"
+                android:layout_width="0dp"
+                android:layout_height="65dp"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="#2E7D32"
+                android:text="Pertemuan 3"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                app:cornerRadius="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnWebView" />
+
+            <Button
+                android:id="@+id/btnPertemuan4"
+                android:layout_width="0dp"
+                android:layout_height="65dp"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="#2E7D32"
+                android:text="Pertemuan 4"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                app:cornerRadius="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnPertemuan3" />
+
+            <Button
+                android:id="@+id/btnPertemuan5"
+                android:layout_width="0dp"
+                android:layout_height="65dp"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="#2E7D32"
+                android:text="Pertemuan 5"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                app:cornerRadius="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnPertemuan4" />
+
+            <Button
+                android:id="@+id/btnPertemuan10"
+                android:layout_width="0dp"
+                android:layout_height="65dp"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="#2E7D32"
+                android:text="Pertemuan 10"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                app:cornerRadius="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnPertemuan5" />
+
+            <Button
                 android:id="@+id/btnLogout"
                 android:layout_width="0dp"
                 android:layout_height="60dp"
@@ -120,7 +176,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btnWebView" />
+                app:layout_constraintTop_toBottomOf="@id/btnPertemuan10" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
