@@ -11,54 +11,63 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.YeremiWarriors">
-        <activity
-            android:name=".Home.pertemuan_10.TenthActivity"
-            android:exported="false" />
+
         <activity
             android:name=".SplashScreenActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
+
         <activity
             android:name=".BaseActivity"
             android:exported="false" />
-        <activity
-            android:name=".Profile.SplashScreenActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Profile.MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Profile.LoginActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Profile.BaseActivity"
-            android:exported="false" />
+
         <activity
             android:name=".Home.WelcomeActivity"
             android:exported="false" />
+
         <activity
             android:name=".Home.WebViewActivity"
             android:exported="false" />
-        <activity
-            android:name=".Home.HomeFragment"
-            android:exported="false" />
+
         <activity
             android:name=".Home.CustomTwoActivity"
             android:exported="false" />
+
         <activity
             android:name=".Home.CalculatorActivity"
             android:exported="false" />
+
+        <!-- Activity Pertemuan 3 -->
+        <activity
+            android:name=".Home.pertemuan_3.ThirdActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".Home.pertemuan_3.ThirdResultActivity"
+            android:exported="false" />
+
+        <!-- Activity Pertemuan 4 -->
+        <activity
+            android:name=".Home.pertemuan_4.FourthActivity"
+            android:exported="false" />
+
+        <!-- Activity Pertemuan 10 -->
+        <activity
+            android:name=".Home.pertemuan_10.TenthActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>

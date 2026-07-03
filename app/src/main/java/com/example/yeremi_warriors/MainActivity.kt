@@ -4,10 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import com.example.yeremi_warriors.BreakApps.Home.CalculatorActivity
-import com.example.yeremi_warriors.BreakApps.Home.CustomTwoActivity
-import com.example.yeremi_warriors.BreakApps.Home.WebViewActivity
-import com.example.yeremi_warriors.BreakApps.Home.WelcomeActivity
+import com.example.yeremi_warriors.Home.CalculatorActivity
+import com.example.yeremi_warriors.Home.CustomTwoActivity
+import com.example.yeremi_warriors.Home.WebViewActivity
+import com.example.yeremi_warriors.Home.WelcomeActivity
 import com.example.yeremi_warriors.databinding.ActivityMainBinding
 import com.google.android.material.snackbar.Snackbar
 

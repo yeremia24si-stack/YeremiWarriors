@@ -9,8 +9,9 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.yeremi_warriors.BreakApps.LoginActivity
-import com.example.farel_break.databinding.FragmentHomeBinding
+import com.example.yeremi_warriors.Home.CalculatorActivity
+import com.example.yeremi_warriors.LoginActivity
+import com.example.yeremi_warriors.databinding.FragmentHomeBinding
 import com.google.android.material.snackbar.Snackbar
 
 class HomeFragment : Fragment() {

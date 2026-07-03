@@ -4,9 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.yeremi_warriors.BreakApps.About.AboutFragment
-import com.example.yeremi_warriors.BreakApps.Home.HomeFragment
-import com.example.yeremi_warriors.BreakApps.Profile.ProfileFragment
+import com.example.yeremi_warriors.About.AboutFragment
+import com.example.yeremi_warriors.Home.HomeFragment
+import com.example.yeremi_warriors.Profile.ProfileFragment
 import com.example.yeremi_warriors.R
 import com.example.yeremi_warriors.databinding.ActivityBaseBinding
 

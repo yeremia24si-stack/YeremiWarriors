@@ -1,5 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Farel-Break</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
+    <!-- Nama Aplikasi -->
+    <string name="app_name">Yeremi-Warriors</string>
+
+    <!-- Placeholder -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- String Halaman Verifikasi -->
+    <string name="verif">Verifikasi Nomor</string>
+    <string name="hint_no_hp">Contoh: 0812xxxxxxxx</string>
+    <string name="btn_kirim">Daftar Sekarang</string>
+    <string name="pesan_sukses">Kode berhasil dikirim!</string>
+    <string name="sub_sukses">Silakan periksa nomor Anda</string>
+
+    <!-- Informasi Aplikasi -->
+    <string name="nama_desa">Yeremi-Warriors</string>
+    <string name="copyright_desa">© 2025 Yeremi-Warriors</string>
+
 </resources>

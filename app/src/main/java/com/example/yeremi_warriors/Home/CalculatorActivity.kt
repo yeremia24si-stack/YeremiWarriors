@@ -1,43 +1,54 @@
 package com.example.yeremi_warriors.Home
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
-import com.example.yeremi_warriors.databinding.FragmentAboutBinding
+import com.example.yeremi_warriors.databinding.ActivityCalculatorBinding
 
-class AboutFragment : Fragment() {
+class CalculatorActivity : AppCompatActivity() {
 
-    private var _binding: FragmentAboutBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var binding: ActivityCalculatorBinding
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentAboutBinding.inflate(inflater, container, false)
-        return binding.root
-    }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityCalculatorBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        // Setup Toolbar sesuai modul Pertemuan 7
-        (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbarAbout)
-        (requireActivity() as AppCompatActivity).supportActionBar?.apply {
-            title = "Tentang Aplikasi"
+        // Setup Toolbar
+        setSupportActionBar(binding.toolbarCalculator)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        binding.toolbarCalculator.setNavigationOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
         }
 
-        // Isi konten deskripsi (Bisa lo sesuaikan lagi kalimatnya)
-        binding.tvAppName.text = "Pariwisata & Homestay"
-        binding.tvTagline.text = "Sistem Informasi"
-        binding.tvDescription.text = "Pariwisata & Homestay Booking"
-    }
+        // Ambil data dari Intent (Bonus dari MainActivity)
+        val title = intent.getStringExtra("EXTRA_TITLE")
+        binding.tvHeaderInfo.text = title ?: "Kalkulator Geometri"
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+        // Logic Hitung Segitiga
+        binding.btnHitungSegitiga.setOnClickListener {
+            val alas = binding.etAlas.text.toString().toDoubleOrNull()
+            val tinggi = binding.etTinggi.text.toString().toDoubleOrNull()
+
+            if (alas != null && tinggi != null) {
+                val hasil = 0.5 * alas * tinggi
+                binding.tvHasilSegitiga.text = "Hasil: $hasil"
+            } else {
+                binding.tvHasilSegitiga.text = "Input tidak valid"
+            }
+        }
+
+        // Logic Hitung Balok
+        binding.btnHitungBalok.setOnClickListener {
+            val p = binding.etPanjang.text.toString().toDoubleOrNull()
+            val l = binding.etLebar.text.toString().toDoubleOrNull()
+            val t = binding.etTinggiBalok.text.toString().toDoubleOrNull()
+
+            if (p != null && l != null && t != null) {
+                val hasil = p * l * t
+                binding.tvHasilBalok.text = "Hasil: $hasil"
+            } else {
+                binding.tvHasilBalok.text = "Input tidak valid"
+            }
+        }
     }
 }

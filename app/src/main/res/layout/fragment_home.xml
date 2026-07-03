@@ -32,7 +32,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                android:text="Dashboard SIMANDES"
+                android:text="Dashboard Desa"
                 android:textColor="#2E7D32"
                 android:textSize="26sp"
                 android:textStyle="bold"

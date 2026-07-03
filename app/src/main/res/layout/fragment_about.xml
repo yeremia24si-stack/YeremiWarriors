@@ -50,7 +50,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="SIMANDES"
+                        android:text="PARIWISATA"
                         android:textColor="#2E7D32"
                         android:textSize="22sp"
                         android:textStyle="bold" />
@@ -59,7 +59,7 @@
                         android:id="@+id/tvTagline"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Layanan Mandiri &amp; Surat"
+                        android:text="Layanan Penginapan"
                         android:textColor="#666666"
                         android:textSize="14sp" />
                 </LinearLayout>
