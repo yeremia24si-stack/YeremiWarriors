@@ -215,6 +215,15 @@
                     android:background="@drawable/bg_button_primary"
                     android:stateListAnimator="@null" />
 
+                <Button
+                    android:id="@+id/btnRegisterGmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:backgroundTint="#DB4437"
+                    android:text="Register With Gmail"
+                    android:textColor="@android:color/white" />
+
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 

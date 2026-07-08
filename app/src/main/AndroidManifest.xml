@@ -75,6 +75,24 @@
             android:name=".Home.pertemuan_5.WebViewActivity"
             android:exported="false" />
 
+        <!-- Activity Pertemuan 6 -->
+        <activity
+            android:name=".Home.pertemuan_7.SixthActivity"
+            android:exported="false" />
+
+        <!-- Activity Pertemuan 8 -->
+        <activity
+            android:name=".Home.pertemuan_8.EmailGmailActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".Home.pertemuan_8.RegistrationActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".Home.pertemuan_8.RegistrationSuccessActivity"
+            android:exported="false" />
+
         <!-- Activity Pertemuan 10 -->
         <activity
             android:name=".Home.pertemuan_10.TenthActivity"

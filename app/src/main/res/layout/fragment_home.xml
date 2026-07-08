@@ -14,9 +14,7 @@
         android:background="#2E7D32"
         app:titleTextColor="#FFFFFF" />
 
-
-
-    <!-- Konten scroll -->
+    <!-- Konten Scroll -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -149,6 +147,47 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/btnPertemuan4" />
 
+            <!-- Tambahan Pertemuan 6 -->
+            <Button
+                android:id="@+id/btnPertemuan6"
+                android:layout_width="0dp"
+                android:layout_height="65dp"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="#2E7D32"
+                android:text="Pertemuan 6"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                app:cornerRadius="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnPertemuan5" />
+
+            <!-- Tambahan Pertemuan 8 -->
+            <Button
+                android:id="@+id/btnPertemuan8"
+                android:layout_width="0dp"
+                android:layout_height="65dp"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="#2E7D32"
+                android:text="Pertemuan 8"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                app:cornerRadius="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnPertemuan6" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPertemuan9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Pertemuan 9"
+                android:backgroundTint="#2E7D32"
+                app:layout_constraintTop_toBottomOf="@+id/btnPertemuan8"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
             <Button
                 android:id="@+id/btnPertemuan10"
                 android:layout_width="0dp"
@@ -161,7 +200,7 @@
                 app:cornerRadius="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btnPertemuan5" />
+                app:layout_constraintTop_toBottomOf="@id/btnPertemuan8" />
 
             <Button
                 android:id="@+id/btnLogout"
@@ -179,6 +218,7 @@
                 app:layout_constraintTop_toBottomOf="@id/btnPertemuan10" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </ScrollView>
 
 </LinearLayout>
