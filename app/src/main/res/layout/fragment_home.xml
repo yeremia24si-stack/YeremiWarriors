@@ -177,16 +177,19 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/btnPertemuan6" />
 
-            <com.google.android.material.button.MaterialButton
+            <Button
                 android:id="@+id/btnPertemuan9"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Pertemuan 9"
+                android:layout_width="0dp"
+                android:layout_height="65dp"
+                android:layout_marginTop="16dp"
                 android:backgroundTint="#2E7D32"
-                app:layout_constraintTop_toBottomOf="@+id/btnPertemuan8"
+                android:text="Pertemuan 9"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                app:cornerRadius="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintTop_toBottomOf="@id/btnPertemuan8" />
 
             <Button
                 android:id="@+id/btnPertemuan10"
@@ -200,7 +203,7 @@
                 app:cornerRadius="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btnPertemuan8" />
+                app:layout_constraintTop_toBottomOf="@id/btnPertemuan9" />
 
             <Button
                 android:id="@+id/btnLogout"

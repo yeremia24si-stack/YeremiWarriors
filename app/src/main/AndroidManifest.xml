@@ -93,6 +93,11 @@
             android:name=".Home.pertemuan_8.RegistrationSuccessActivity"
             android:exported="false" />
 
+        <!-- Activity Pertemuan 9 -->
+        <activity
+            android:name=".Home.pertemuan_9.NinthActivity"
+            android:exported="false" />
+
         <!-- Activity Pertemuan 10 -->
         <activity
             android:name=".Home.pertemuan_10.TenthActivity"
