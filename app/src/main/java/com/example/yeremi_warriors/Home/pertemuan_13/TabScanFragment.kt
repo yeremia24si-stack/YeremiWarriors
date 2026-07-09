@@ -15,36 +15,45 @@ import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import com.example.yeremi_warriors.databinding.FragmentTabScanBinding
+import com.example.yeremi_warriors.utils.PermissionHelper
 import com.google.mlkit.vision.barcode.BarcodeScannerOptions
 import com.google.mlkit.vision.barcode.BarcodeScanning
 import com.google.mlkit.vision.barcode.common.Barcode
 import com.google.mlkit.vision.common.InputImage
-import com.example.yeremi_warriors.databinding.FragmentTabScanBinding
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 
 class TabScanFragment : Fragment() {
+
     private var _binding: FragmentTabScanBinding? = null
     private val binding get() = _binding!!
 
     private lateinit var cameraExecutor: ExecutorService
 
-    private var scanner = BarcodeScanning.getClient(
+    private val scanner = BarcodeScanning.getClient(
         BarcodeScannerOptions.Builder()
             .setBarcodeFormats(Barcode.FORMAT_QR_CODE)
             .build()
     )
 
-    private val permissionLauncher = registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
-        if (isGranted) {
-            startCamera()
-        } else {
-            Toast.makeText(context, "Izin kamera diperlukan", Toast.LENGTH_SHORT).show()
+    // Launcher Permission
+    private val permissionLauncher =
+        registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
+            if (isGranted) {
+                startCamera()
+            } else {
+                Toast.makeText(
+                    context,
+                    "Izin kamera diperlukan",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
         }
-    }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentTabScanBinding.inflate(inflater, container, false)
@@ -53,12 +62,17 @@ class TabScanFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         cameraExecutor = Executors.newSingleThreadExecutor()
 
-        if (hasCameraPermission()) {
-            startCamera()
+        // ===== Gabungan PermissionHelper =====
+        if (!PermissionHelper.hasPermission(requireActivity(), Manifest.permission.CAMERA)) {
+            PermissionHelper.requestPermission(
+                permissionLauncher,
+                Manifest.permission.CAMERA
+            )
         } else {
-            permissionLauncher.launch(Manifest.permission.CAMERA)
+            startCamera()
         }
     }
 
@@ -70,41 +84,81 @@ class TabScanFragment : Fragment() {
     }
 
     private fun startCamera() {
-        val cameraProviderFuture = ProcessCameraProvider.getInstance(requireContext())
+        val cameraProviderFuture =
+            ProcessCameraProvider.getInstance(requireContext())
+
         cameraProviderFuture.addListener({
+
             val cameraProvider = cameraProviderFuture.get()
 
-            val preview = Preview.Builder().build().apply {
-                setSurfaceProvider(binding.previewView.surfaceProvider)
-            }
-
-            val imageAnalyzer = ImageAnalysis.Builder()
-                .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
+            val preview = Preview.Builder()
                 .build()
                 .apply {
-                    setAnalyzer(cameraExecutor) { imageProxy ->
-                        val mediaImage = imageProxy.image ?: return@setAnalyzer imageProxy.close()
-                        val image = InputImage.fromMediaImage(mediaImage, imageProxy.imageInfo.rotationDegrees)
-
-                        scanner.process(image)
-                            .addOnSuccessListener { barcodes ->
-                                if (barcodes.isNotEmpty()) {
-                                    val rawValue = barcodes[0].rawValue
-                                    activity?.runOnUiThread {
-                                        binding.tvScanResult.text = "Check-in berhasil: $rawValue"
-                                    }
-                                }
-                            }
-                            .addOnCompleteListener { imageProxy.close() }
-                    }
+                    setSurfaceProvider(binding.previewView.surfaceProvider)
                 }
 
+            val imageAnalyzer =
+                ImageAnalysis.Builder()
+                    .setBackpressureStrategy(
+                        ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST
+                    )
+                    .build()
+                    .apply {
+
+                        setAnalyzer(cameraExecutor) { imageProxy ->
+
+                            val mediaImage =
+                                imageProxy.image ?: run {
+                                    imageProxy.close()
+                                    return@setAnalyzer
+                                }
+
+                            val image =
+                                InputImage.fromMediaImage(
+                                    mediaImage,
+                                    imageProxy.imageInfo.rotationDegrees
+                                )
+
+                            scanner.process(image)
+                                .addOnSuccessListener { barcodes ->
+
+                                    if (barcodes.isNotEmpty()) {
+
+                                        val rawValue =
+                                            barcodes[0].rawValue
+
+                                        activity?.runOnUiThread {
+                                            binding.tvScanResult.text =
+                                                "Check-in berhasil: $rawValue"
+                                        }
+                                    }
+                                }
+                                .addOnCompleteListener {
+                                    imageProxy.close()
+                                }
+                        }
+                    }
+
             try {
+
                 cameraProvider.unbindAll()
-                cameraProvider.bindToLifecycle(this, CameraSelector.DEFAULT_BACK_CAMERA, preview, imageAnalyzer)
+
+                cameraProvider.bindToLifecycle(
+                    this,
+                    CameraSelector.DEFAULT_BACK_CAMERA,
+                    preview,
+                    imageAnalyzer
+                )
+
             } catch (e: Exception) {
-                Log.e("TabScan", "Gagal mulai kamera", e)
+
+                Log.e(
+                    "TabScan",
+                    "Gagal mulai kamera",
+                    e
+                )
             }
+
         }, ContextCompat.getMainExecutor(requireContext()))
     }
 
