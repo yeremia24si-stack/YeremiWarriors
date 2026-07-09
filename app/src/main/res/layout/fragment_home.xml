@@ -167,9 +167,12 @@
             <Button
                 android:id="@+id/btnPertemuan13"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="65dp"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="#2E7D32"
                 android:text="Pertemuan 13"
-                android:backgroundTint="#2E7D32" />
+                android:textAllCaps="false"
+                app:cornerRadius="12dp" />
 
             <Button
                 android:id="@+id/btnLogout"
