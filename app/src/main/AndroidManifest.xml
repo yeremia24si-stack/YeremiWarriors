@@ -10,7 +10,7 @@
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="28" />
 
-    <!-- Notifikasi & Alarm -->
+    <!-- Notifikasi -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
     <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
@@ -30,118 +30,118 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.YeremiWarriors">
 
-        <!-- Splash Screen -->
+        <!-- Splash -->
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
         <!-- Main -->
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
+            android:exported="false"/>
 
         <activity
             android:name=".LoginActivity"
-            android:exported="false" />
+            android:exported="false"/>
 
         <activity
             android:name=".BaseActivity"
-            android:exported="false" />
+            android:exported="false"/>
 
         <!-- Home -->
         <activity
             android:name=".Home.WelcomeActivity"
-            android:exported="false" />
+            android:exported="false"/>
 
         <activity
             android:name=".Home.WebViewActivity"
-            android:exported="false" />
+            android:exported="false"/>
 
         <activity
             android:name=".Home.CustomTwoActivity"
-            android:exported="false" />
+            android:exported="false"/>
 
         <activity
             android:name=".Home.CalculatorActivity"
-            android:exported="false" />
+            android:exported="false"/>
 
         <!-- Pertemuan 3 -->
         <activity
             android:name=".Home.pertemuan_3.ThirdActivity"
-            android:exported="false" />
+            android:exported="false"/>
 
         <activity
             android:name=".Home.pertemuan_3.ThirdResultActivity"
-            android:exported="false" />
+            android:exported="false"/>
 
         <!-- Pertemuan 4 -->
         <activity
             android:name=".Home.pertemuan_4.FourthActivity"
-            android:exported="false" />
+            android:exported="false"/>
 
         <!-- Pertemuan 5 -->
         <activity
             android:name=".Home.pertemuan_5.FifthActivity"
-            android:exported="false" />
+            android:exported="false"/>
 
         <activity
             android:name=".Home.pertemuan_5.WebViewActivity"
-            android:exported="false" />
+            android:exported="false"/>
 
         <!-- Pertemuan 6 -->
         <activity
             android:name=".Home.pertemuan_7.SixthActivity"
-            android:exported="false" />
+            android:exported="false"/>
 
         <!-- Pertemuan 8 -->
         <activity
             android:name=".Home.pertemuan_8.EmailGmailActivity"
-            android:exported="false" />
+            android:exported="false"/>
 
         <activity
             android:name=".Home.pertemuan_8.RegistrationActivity"
-            android:exported="false" />
+            android:exported="false"/>
 
         <activity
             android:name=".Home.pertemuan_8.RegistrationSuccessActivity"
-            android:exported="false" />
+            android:exported="false"/>
 
         <!-- Pertemuan 9 -->
         <activity
             android:name=".Home.pertemuan_9.NinthActivity"
-            android:exported="false" />
+            android:exported="false"/>
 
         <!-- Pertemuan 10 -->
         <activity
             android:name=".Home.pertemuan_10.TenthActivity"
-            android:exported="false" />
+            android:exported="false"/>
 
         <!-- Pertemuan 11 -->
         <activity
             android:name=".Home.pertemuan_11.TutorialMessageActivity"
-            android:exported="false" />
+            android:exported="false"/>
 
         <!-- Pertemuan 13 -->
         <activity
             android:name=".Home.pertemuan_13.ThirteenthActivity"
-            android:exported="false" />
+            android:exported="false"/>
 
         <!-- Note -->
         <activity
             android:name=".Note.NoteFormActivity"
-            android:exported="false" />
+            android:exported="false"/>
 
         <!-- Reminder Receiver -->
         <receiver
             android:name=".utils.ReminderReceiver"
-            android:exported="false" />
+            android:exported="false"/>
 
-        <!-- File Provider -->
+        <!-- FileProvider -->
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.fileprovider"
@@ -150,7 +150,7 @@
 
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths" />
+                android:resource="@xml/file_paths"/>
         </provider>
 
     </application>

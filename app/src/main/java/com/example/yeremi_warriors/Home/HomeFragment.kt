@@ -6,14 +6,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.coroutines.launch
 import com.example.yeremi_warriors.LoginActivity
+import com.example.yeremi_warriors.R
+import com.example.yeremi_warriors.data.api.CatFactApiClient
+import com.example.yeremi_warriors.data.api.PhotoApiClient
 import com.example.yeremi_warriors.databinding.FragmentHomeBinding
 import com.example.yeremi_warriors.Home.pertemuan_3.ThirdActivity
 import com.example.yeremi_warriors.Home.pertemuan_4.FourthActivity
@@ -23,12 +26,16 @@ import com.example.yeremi_warriors.Home.pertemuan_8.EmailGmailActivity
 import com.example.yeremi_warriors.Home.pertemuan_9.NinthActivity
 import com.example.yeremi_warriors.Home.pertemuan_10.TenthActivity
 import com.example.yeremi_warriors.Home.pertemuan_11.TutorialMessageActivity
-import com.example.yeremi_warriors.Home.pertemuan_13.ThirteenthActivity
-import com.example.yeremi_warriors.data.api.CatFactApiClient
-import com.example.yeremi_warriors.data.api.PhotoApiClient
 import com.example.yeremi_warriors.Home.pertemuan_11.PhotoAdapter
+import com.example.yeremi_warriors.Home.pertemuan_13.ThirteenthActivity
 import com.google.android.material.snackbar.Snackbar
+import kotlinx.coroutines.launch
 
+/**
+ * NB: CalculatorActivity, WelcomeActivity, CustomTwoActivity, WebViewActivity
+ * tidak perlu di-import karena satu package dengan HomeFragment
+ * (com.example.yeremi_warriors.Home).
+ */
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
@@ -46,90 +53,74 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Setup Toolbar
+        // Setup Toolbar (tetap sama seperti versi asli)
         (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
         (requireActivity() as AppCompatActivity).supportActionBar?.title = "Home"
 
-        val sharedPref =
-            requireContext().getSharedPreferences("user_pref", Context.MODE_PRIVATE)
-        val username = sharedPref.getString("username", "Pengguna")
-
-        // Rumus Bangun Ruang
-        binding.btnRumus.setOnClickListener {
-            startActivity(Intent(requireContext(), CalculatorActivity::class.java))
-        }
-
-        // Welcome
-        binding.btnCustom1.setOnClickListener {
-            val intent = Intent(requireContext(), WelcomeActivity::class.java)
-            intent.putExtra("USERNAME", username)
-            startActivity(intent)
-        }
-
-        // Custom Two
-        binding.btnCustom2.setOnClickListener {
-            startActivity(Intent(requireContext(), CustomTwoActivity::class.java))
-        }
-
-        // WebView
-        binding.btnWebView.setOnClickListener {
-            startActivity(Intent(requireContext(), WebViewActivity::class.java))
-        }
-
-        // Pertemuan 3
-        binding.btnPertemuan3.setOnClickListener {
-            startActivity(Intent(requireContext(), ThirdActivity::class.java))
-        }
-
-        // Pertemuan 4
-        binding.btnPertemuan4.setOnClickListener {
-            startActivity(Intent(requireContext(), FourthActivity::class.java))
-        }
-
-        // Pertemuan 5
-        binding.btnPertemuan5.setOnClickListener {
-            startActivity(Intent(requireContext(), FifthActivity::class.java))
-        }
-
-        // Pertemuan 6
-        binding.btnPertemuan6.setOnClickListener {
-            startActivity(Intent(requireContext(), SixthActivity::class.java))
-        }
-
-        // Pertemuan 8
-        binding.btnPertemuan8.setOnClickListener {
-            startActivity(Intent(requireContext(), EmailGmailActivity::class.java))
-        }
-
-        // Pertemuan 9
-        binding.btnPertemuan9.setOnClickListener {
-            startActivity(Intent(requireContext(), NinthActivity::class.java))
-        }
-
-        // Pertemuan 10
-        binding.btnPertemuan10.setOnClickListener {
-            startActivity(Intent(requireContext(), TenthActivity::class.java))
-        }
-
-        // Pertemuan 11
-        binding.btnPertemuan11.setOnClickListener {
-            startActivity(Intent(requireContext(), TutorialMessageActivity::class.java))
-        }
+        setupMenuLayanan()
+        setupMateriPertemuan()
 
         loadCatFact()
         loadPhoto()
-
-        binding.btnPertemuan13.setOnClickListener {
-            startActivity(Intent(requireContext(), ThirteenthActivity::class.java))
-        }
 
         binding.btnRefresh.setOnClickListener {
             loadCatFact()
         }
 
-        // Logout
         binding.btnLogout.setOnClickListener {
             showLogoutDialog()
+        }
+    }
+
+    private fun setupMenuLayanan() {
+        val sharedPref =
+            requireContext().getSharedPreferences("user_pref", Context.MODE_PRIVATE)
+        val username = sharedPref.getString("username", "Pengguna")
+
+        val menuList = listOf(
+            DashboardMenu(
+                iconRes = R.drawable.ic_notes,
+                title = "Rumus Bangun Datar",
+                iconBgColorRes = R.color.icon_bg_teal,
+                iconTintColorRes = R.color.icon_teal,
+                targetActivity = CalculatorActivity::class.java
+            ),
+            DashboardMenu(
+                iconRes = R.drawable.ic_home,
+                title = "Halaman Welcome",
+                iconBgColorRes = R.color.icon_bg_purple,
+                iconTintColorRes = R.color.icon_purple,
+                targetActivity = WelcomeActivity::class.java
+            )
+        )
+
+        binding.rvMenu.layoutManager = LinearLayoutManager(requireContext())
+        binding.rvMenu.adapter = DashboardMenuAdapter(menuList) { item ->
+            val intent = Intent(requireContext(), item.targetActivity)
+            // Halaman Welcome butuh extra USERNAME, sama seperti versi asli
+            if (item.targetActivity == WelcomeActivity::class.java) {
+                intent.putExtra("USERNAME", username)
+            }
+            startActivity(intent)
+        }
+    }
+
+    private fun setupMateriPertemuan() {
+        val pertemuanList = listOf(
+            PertemuanItem("Pertemuan 3", ThirdActivity::class.java),
+            PertemuanItem("Pertemuan 4", FourthActivity::class.java),
+            PertemuanItem("Pertemuan 5", FifthActivity::class.java),
+            PertemuanItem("Pertemuan 6", SixthActivity::class.java),
+            PertemuanItem("Pertemuan 8", EmailGmailActivity::class.java),
+            PertemuanItem("Pertemuan 9", NinthActivity::class.java),
+            PertemuanItem("Pertemuan 10", TenthActivity::class.java),
+            PertemuanItem("Pertemuan 11", TutorialMessageActivity::class.java),
+            PertemuanItem("Pertemuan 13", ThirteenthActivity::class.java, isHighlighted = true)
+        )
+
+        binding.rvPertemuan.layoutManager = LinearLayoutManager(requireContext())
+        binding.rvPertemuan.adapter = PertemuanAdapter(pertemuanList) { item ->
+            startActivity(Intent(requireContext(), item.targetActivity))
         }
     }
 
@@ -140,7 +131,6 @@ class HomeFragment : Fragment() {
             .setPositiveButton("Ya") { _, _ ->
                 val sharedPref =
                     requireContext().getSharedPreferences("user_pref", Context.MODE_PRIVATE)
-
                 sharedPref.edit().clear().apply()
 
                 val intent = Intent(requireContext(), LoginActivity::class.java)
@@ -171,14 +161,10 @@ class HomeFragment : Fragment() {
         viewLifecycleOwner.lifecycleScope.launch {
             try {
                 val photos = PhotoApiClient.apiService.getPhotos()
-
                 val adapter = PhotoAdapter(photos)
 
-                binding.rvGallery.layoutManager =
-                    LinearLayoutManager(requireContext())
-
+                binding.rvGallery.layoutManager = LinearLayoutManager(requireContext())
                 binding.rvGallery.adapter = adapter
-
             } catch (e: Exception) {
                 Toast.makeText(
                     requireContext(),

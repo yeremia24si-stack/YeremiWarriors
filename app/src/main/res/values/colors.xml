@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- ========================= -->
     <!-- Warna Tema Awal -->
+    <!-- ========================= -->
     <color name="primary">#4A6CF7</color>
     <color name="primary_dark">#2E4CE6</color>
     <color name="background">#F5F7FF</color>
@@ -9,7 +11,9 @@
     <color name="text_secondary">#7A7A7A</color>
     <color name="white">#FFFFFF</color>
 
+    <!-- ========================= -->
     <!-- Warna Tema Desa Wisata -->
+    <!-- ========================= -->
     <color name="hijau_desa">#2E7D32</color>
     <color name="hijau_muda">#A5D6A7</color>
     <color name="hijau_gelap">#2C4A2E</color>
@@ -17,5 +21,38 @@
     <color name="abu_gelap">#364A5F</color>
     <color name="abu_terang">#F5F5F0</color>
     <color name="teks_abu">#757575</color>
+
+    <!-- ========================= -->
+    <!-- Dashboard Modern -->
+    <!-- ========================= -->
+    <color name="green_primary">#2E7D32</color>
+    <color name="green_dark">#1B5E20</color>
+    <color name="green_darker">#2C4A2E</color>
+
+    <color name="dashboard_bg">#F4F7F2</color>
+    <color name="card_white">#FFFFFF</color>
+
+    <!-- Background Icon -->
+    <color name="icon_bg_teal">#E1F5EE</color>
+    <color name="icon_bg_purple">#EEEDFE</color>
+    <color name="icon_bg_amber">#FAEEDA</color>
+    <color name="icon_bg_coral">#FAECE7</color>
+    <color name="white_20">#33FFFFFF</color>
+
+    <!-- Warna Icon -->
+    <color name="icon_teal">#0F6E56</color>
+    <color name="icon_purple">#534AB7</color>
+    <color name="icon_amber">#854F0B</color>
+    <color name="icon_coral">#993C1D</color>
+
+    <!-- Dashboard Text -->
+    <color name="text_title">#2C2C2A</color>
+    <color name="chevron_gray">#B4B2A9</color>
+
+    <!-- Highlight -->
+    <color name="highlight_green">#97C459</color>
+
+    <!-- Logout -->
+    <color name="logout_red">#E24B4A</color>
 
 </resources>

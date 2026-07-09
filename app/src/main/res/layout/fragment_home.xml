@@ -4,16 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#F5F5F5">
+    android:background="@color/dashboard_bg">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="#2E7D32"
-        app:titleTextColor="#FFFFFF" />
+        android:background="@color/green_primary"
+        app:titleTextColor="@android:color/white" />
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true">
@@ -21,208 +21,162 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="20dp">
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tvTitleMain"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Dashboard Desa"
-                android:textColor="#2E7D32"
-                android:textSize="26sp"
-                android:textStyle="bold"
-                android:layout_gravity="center_horizontal" />
-
-            <TextView
-                android:id="@+id/tvDescMain"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Silahkan pilih layanan desa di bawah ini"
-                android:textColor="#666666"
-                android:layout_gravity="center_horizontal" />
-
-            <!-- Buttons Section -->
-            <Button
-                android:id="@+id/btnRumus"
+            <!-- Header: Modern Design -->
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="65dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_header_dashboard"
+                android:padding="24dp"
+                android:paddingBottom="48dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/welcome_to"
+                    android:textColor="#DCEEDD"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/village_name"
+                    android:textColor="@android:color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Subtitle: Center Aligned like reference -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                android:backgroundTint="#2E7D32"
-                android:text="Rumus Bangun Ruang"
-                android:textAllCaps="false"
-                app:cornerRadius="12dp" />
-
-            <Button
-                android:id="@+id/btnCustom1"
-                android:layout_width="match_parent"
-                android:layout_height="65dp"
-                android:layout_marginTop="12dp"
-                android:backgroundTint="#2E7D32"
-                android:text="Halaman Welcome"
-                android:textAllCaps="false"
-                app:cornerRadius="12dp" />
-
-            <Button
-                android:id="@+id/btnCustom2"
-                android:layout_width="match_parent"
-                android:layout_height="65dp"
-                android:layout_marginTop="12dp"
-                android:backgroundTint="#2E7D32"
-                android:text="Informasi Desa"
-                android:textAllCaps="false"
-                app:cornerRadius="12dp" />
-
-            <Button
-                android:id="@+id/btnWebView"
-                android:layout_width="match_parent"
-                android:layout_height="65dp"
-                android:layout_marginTop="12dp"
-                android:backgroundTint="#2E7D32"
-                android:text="Bina Desa (WebView)"
-                android:textAllCaps="false"
-                app:cornerRadius="12dp" />
-
-            <Button
-                android:id="@+id/btnPertemuan3"
-                android:layout_width="match_parent"
-                android:layout_height="65dp"
-                android:layout_marginTop="12dp"
-                android:backgroundTint="#2E7D32"
-                android:text="Pertemuan 3"
-                android:textAllCaps="false"
-                app:cornerRadius="12dp" />
-
-            <Button
-                android:id="@+id/btnPertemuan4"
-                android:layout_width="match_parent"
-                android:layout_height="65dp"
-                android:layout_marginTop="12dp"
-                android:backgroundTint="#2E7D32"
-                android:text="Pertemuan 4"
-                android:textAllCaps="false"
-                app:cornerRadius="12dp" />
-
-            <Button
-                android:id="@+id/btnPertemuan5"
-                android:layout_width="match_parent"
-                android:layout_height="65dp"
-                android:layout_marginTop="12dp"
-                android:backgroundTint="#2E7D32"
-                android:text="Pertemuan 5"
-                android:textAllCaps="false"
-                app:cornerRadius="12dp" />
-
-            <Button
-                android:id="@+id/btnPertemuan6"
-                android:layout_width="match_parent"
-                android:layout_height="65dp"
-                android:layout_marginTop="12dp"
-                android:backgroundTint="#2E7D32"
-                android:text="Pertemuan 6"
-                android:textAllCaps="false"
-                app:cornerRadius="12dp" />
-
-            <Button
-                android:id="@+id/btnPertemuan8"
-                android:layout_width="match_parent"
-                android:layout_height="65dp"
-                android:layout_marginTop="12dp"
-                android:backgroundTint="#2E7D32"
-                android:text="Pertemuan 8"
-                android:textAllCaps="false"
-                app:cornerRadius="12dp" />
-
-            <Button
-                android:id="@+id/btnPertemuan9"
-                android:layout_width="match_parent"
-                android:layout_height="65dp"
-                android:layout_marginTop="12dp"
-                android:backgroundTint="#2E7D32"
-                android:text="Pertemuan 9"
-                android:textAllCaps="false"
-                app:cornerRadius="12dp" />
-
-            <Button
-                android:id="@+id/btnPertemuan10"
-                android:layout_width="match_parent"
-                android:layout_height="65dp"
-                android:layout_marginTop="12dp"
-                android:backgroundTint="#2E7D32"
-                android:text="Pertemuan 10"
-                android:textAllCaps="false"
-                app:cornerRadius="12dp" />
-
-            <Button
-                android:id="@+id/btnPertemuan11"
-                android:layout_width="match_parent"
-                android:layout_height="65dp"
-                android:layout_marginTop="12dp"
-                android:backgroundTint="#2E7D32"
-                android:text="Pertemuan 11"
-                android:textAllCaps="false"
-                app:cornerRadius="12dp" />
-
-            <Button
-                android:id="@+id/btnPertemuan13"
-                android:layout_width="match_parent"
-                android:layout_height="65dp"
-                android:layout_marginTop="12dp"
-                android:backgroundTint="#2E7D32"
-                android:text="Pertemuan 13"
-                android:textAllCaps="false"
-                app:cornerRadius="12dp" />
-
-            <Button
-                android:id="@+id/btnLogout"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginTop="24dp"
-                android:backgroundTint="#D32F2F"
-                android:text="Logout"
-                app:cornerRadius="12dp" />
-
-            <!-- Gallery Section -->
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="32dp"
-                android:background="#DDDDDD" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Fakta Kucing &amp; Galeri"
-                android:textColor="#2E7D32"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/tvCatFact"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:background="#E8F5E9"
-                android:padding="12dp"
-                android:text="Memuat fakta..."
+                android:layout_marginBottom="12dp"
+                android:gravity="center"
+                android:text="@string/choose_service"
+                android:textColor="@color/text_secondary"
                 android:textSize="14sp" />
 
-            <Button
-                android:id="@+id/btnRefresh"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
+            <!-- Service Menu List -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:nestedScrollingEnabled="false"
+                android:overScrollMode="never" />
+
+            <!-- Section: Materi Pertemuan -->
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Refresh Fakta" />
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="12dp"
+                android:text="@string/meeting_materials"
+                android:textColor="@color/green_darker"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvPertemuan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:nestedScrollingEnabled="false"
+                android:overScrollMode="never" />
+
+            <!-- Section: Cat Fact -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="12dp"
+                android:text="@string/daily_fact"
+                android:textColor="@color/green_darker"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/card_white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/tvCatFact"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_title"
+                        android:text="@string/loading_fact" />
+
+                    <Button
+                        android:id="@+id/btnRefresh"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/refresh"
+                        android:backgroundTint="@color/green_primary"
+                        android:textColor="@android:color/white"
+                        android:textAllCaps="false"
+                        app:cornerRadius="12dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Section: Galeri Foto -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="12dp"
+                android:text="@string/village_gallery"
+                android:textColor="@color/green_darker"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvGallery"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:nestedScrollingEnabled="false" />
+                android:layout_marginHorizontal="24dp"
+                android:nestedScrollingEnabled="false"
+                android:overScrollMode="never" />
+
+            <!-- Logout -->
+            <Button
+                android:id="@+id/btnLogout"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="40dp"
+                android:backgroundTint="@color/logout_red"
+                android:text="@string/logout"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                app:cornerRadius="16dp" />
 
         </LinearLayout>
-    </ScrollView>
+
+    </androidx.core.widget.NestedScrollView>
+
 </LinearLayout>

@@ -4,6 +4,35 @@
     <!-- Nama Aplikasi -->
     <string name="app_name">Yeremi-Warriors</string>
 
+    <!-- Halaman Home -->
+    <string name="welcome_to">Selamat datang di</string>
+    <string name="village_name">Desa Wisata Nusantara</string>
+    <string name="village_dashboard">Dashboard Desa</string>
+    <string name="choose_service">Silahkan pilih layanan desa di bawah ini</string>
+    <string name="village_service">Layanan Desa</string>
+    <string name="meeting_materials">Materi Pertemuan</string>
+    <string name="daily_fact">Fakta Unik Hari Ini</string>
+    <string name="loading_fact">Memuat fakta…</string>
+    <string name="refresh">Muat Ulang</string>
+    <string name="village_gallery">Galeri Foto Desa</string>
+    <string name="logout">Keluar</string>
+
+    <!-- Kalkulator Bangun Datar -->
+    <string name="calc_title">Kalkulator Bangun Datar</string>
+    <string name="square_title">Luas Persegi</string>
+    <string name="hint_sisi">Masukkan panjang sisi</string>
+    <string name="rect_title">Luas Persegi Panjang</string>
+    <string name="hint_panjang">Masukkan panjang</string>
+    <string name="hint_lebar">Masukkan lebar</string>
+    <string name="triangle_title">Luas Segitiga</string>
+    <string name="hint_alas">Masukkan alas</string>
+    <string name="hint_tinggi">Masukkan tinggi</string>
+    <string name="btn_calculate">Hitung Luas</string>
+    <string name="result_label">Hasil Luas: %s</string>
+    <string name="invalid_input">Input tidak valid</string>
+    <string name="error_empty">Harus diisi</string>
+    <string name="error_zero">Harus lebih dari 0</string>
+
     <!-- Placeholder -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

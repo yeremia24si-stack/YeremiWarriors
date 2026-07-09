@@ -2,6 +2,7 @@ package com.example.yeremi_warriors.Home
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.yeremi_warriors.R
 import com.example.yeremi_warriors.databinding.ActivityCalculatorBinding
 
 class CalculatorActivity : AppCompatActivity() {
@@ -22,32 +23,86 @@ class CalculatorActivity : AppCompatActivity() {
 
         // Ambil data dari Intent (Bonus dari MainActivity)
         val title = intent.getStringExtra("EXTRA_TITLE")
-        binding.tvHeaderInfo.text = title ?: "Kalkulator Geometri"
+        binding.tvHeaderInfo.text = title ?: "Rumus Bangun Datar"
 
-        // Logic Hitung Segitiga
-        binding.btnHitungSegitiga.setOnClickListener {
-            val alas = binding.etAlas.text.toString().toDoubleOrNull()
-            val tinggi = binding.etTinggi.text.toString().toDoubleOrNull()
+        // Logic Hitung Persegi
+        binding.btnHitungPersegi.setOnClickListener {
+            val sisiStr = binding.etSisi.text.toString()
+            if (sisiStr.isEmpty()) {
+                binding.etSisi.error = getString(R.string.error_empty)
+                return@setOnClickListener
+            }
 
-            if (alas != null && tinggi != null) {
-                val hasil = 0.5 * alas * tinggi
-                binding.tvHasilSegitiga.text = "Hasil: $hasil"
+            val sisi = sisiStr.toDoubleOrNull()
+            if (sisi == null) {
+                binding.tvHasilPersegi.text = getString(R.string.invalid_input)
+            } else if (sisi <= 0) {
+                binding.etSisi.error = getString(R.string.error_zero)
             } else {
-                binding.tvHasilSegitiga.text = "Input tidak valid"
+                val hasil = sisi * sisi
+                binding.tvHasilPersegi.text = getString(R.string.result_label, hasil.toString())
             }
         }
 
-        // Logic Hitung Balok
-        binding.btnHitungBalok.setOnClickListener {
-            val p = binding.etPanjang.text.toString().toDoubleOrNull()
-            val l = binding.etLebar.text.toString().toDoubleOrNull()
-            val t = binding.etTinggiBalok.text.toString().toDoubleOrNull()
+        // Logic Hitung Persegi Panjang
+        binding.btnHitungPersegiPanjang.setOnClickListener {
+            val pStr = binding.etPanjang.text.toString()
+            val lStr = binding.etLebar.text.toString()
 
-            if (p != null && l != null && t != null) {
-                val hasil = p * l * t
-                binding.tvHasilBalok.text = "Hasil: $hasil"
+            var isValid = true
+            if (pStr.isEmpty()) {
+                binding.etPanjang.error = getString(R.string.error_empty)
+                isValid = false
+            }
+            if (lStr.isEmpty()) {
+                binding.etLebar.error = getString(R.string.error_empty)
+                isValid = false
+            }
+
+            if (!isValid) return@setOnClickListener
+
+            val p = pStr.toDoubleOrNull()
+            val l = lStr.toDoubleOrNull()
+
+            if (p == null || l == null) {
+                binding.tvHasilPersegiPanjang.text = getString(R.string.invalid_input)
+            } else if (p <= 0 || l <= 0) {
+                if (p <= 0) binding.etPanjang.error = getString(R.string.error_zero)
+                if (l <= 0) binding.etLebar.error = getString(R.string.error_zero)
             } else {
-                binding.tvHasilBalok.text = "Input tidak valid"
+                val hasil = p * l
+                binding.tvHasilPersegiPanjang.text = getString(R.string.result_label, hasil.toString())
+            }
+        }
+
+        // Logic Hitung Segitiga
+        binding.btnHitungSegitiga.setOnClickListener {
+            val alasStr = binding.etAlas.text.toString()
+            val tinggiStr = binding.etTinggi.text.toString()
+
+            var isValid = true
+            if (alasStr.isEmpty()) {
+                binding.etAlas.error = getString(R.string.error_empty)
+                isValid = false
+            }
+            if (tinggiStr.isEmpty()) {
+                binding.etTinggi.error = getString(R.string.error_empty)
+                isValid = false
+            }
+
+            if (!isValid) return@setOnClickListener
+
+            val alas = alasStr.toDoubleOrNull()
+            val tinggi = tinggiStr.toDoubleOrNull()
+
+            if (alas == null || tinggi == null) {
+                binding.tvHasilSegitiga.text = getString(R.string.invalid_input)
+            } else if (alas <= 0 || tinggi <= 0) {
+                if (alas <= 0) binding.etAlas.error = getString(R.string.error_zero)
+                if (tinggi <= 0) binding.etTinggi.error = getString(R.string.error_zero)
+            } else {
+                val hasil = 0.5 * alas * tinggi
+                binding.tvHasilSegitiga.text = getString(R.string.result_label, hasil.toString())
             }
         }
     }
