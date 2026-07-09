@@ -2,8 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Permission -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+
+    <!-- Camera Feature -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
 
     <application
         android:allowBackup="true"
@@ -15,6 +25,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.YeremiWarriors">
 
+        <!-- Splash Screen -->
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true">
@@ -24,6 +35,7 @@
             </intent-filter>
         </activity>
 
+        <!-- Main -->
         <activity
             android:name=".MainActivity"
             android:exported="false" />
@@ -36,6 +48,7 @@
             android:name=".BaseActivity"
             android:exported="false" />
 
+        <!-- Home -->
         <activity
             android:name=".Home.WelcomeActivity"
             android:exported="false" />
@@ -52,7 +65,7 @@
             android:name=".Home.CalculatorActivity"
             android:exported="false" />
 
-        <!-- Activity Pertemuan 3 -->
+        <!-- Pertemuan 3 -->
         <activity
             android:name=".Home.pertemuan_3.ThirdActivity"
             android:exported="false" />
@@ -61,12 +74,12 @@
             android:name=".Home.pertemuan_3.ThirdResultActivity"
             android:exported="false" />
 
-        <!-- Activity Pertemuan 4 -->
+        <!-- Pertemuan 4 -->
         <activity
             android:name=".Home.pertemuan_4.FourthActivity"
             android:exported="false" />
 
-        <!-- Activity Pertemuan 5 -->
+        <!-- Pertemuan 5 -->
         <activity
             android:name=".Home.pertemuan_5.FifthActivity"
             android:exported="false" />
@@ -75,12 +88,12 @@
             android:name=".Home.pertemuan_5.WebViewActivity"
             android:exported="false" />
 
-        <!-- Activity Pertemuan 6 -->
+        <!-- Pertemuan 6 -->
         <activity
             android:name=".Home.pertemuan_7.SixthActivity"
             android:exported="false" />
 
-        <!-- Activity Pertemuan 8 -->
+        <!-- Pertemuan 8 -->
         <activity
             android:name=".Home.pertemuan_8.EmailGmailActivity"
             android:exported="false" />
@@ -93,15 +106,42 @@
             android:name=".Home.pertemuan_8.RegistrationSuccessActivity"
             android:exported="false" />
 
-        <!-- Activity Pertemuan 9 -->
+        <!-- Pertemuan 9 -->
         <activity
             android:name=".Home.pertemuan_9.NinthActivity"
             android:exported="false" />
 
-        <!-- Activity Pertemuan 10 -->
+        <!-- Pertemuan 10 -->
         <activity
             android:name=".Home.pertemuan_10.TenthActivity"
             android:exported="false" />
+
+        <!-- Pertemuan 11 -->
+        <activity
+            android:name=".Home.pertemuan_11.TutorialMessageActivity"
+            android:exported="false" />
+
+        <!-- Pertemuan 13 -->
+        <activity
+            android:name=".Home.pertemuan_13.ThirteenthActivity"
+            android:exported="false" />
+
+        <!-- Note -->
+        <activity
+            android:name=".Note.NoteFormActivity"
+            android:exported="false" />
+
+        <!-- File Provider -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
 
     </application>
 

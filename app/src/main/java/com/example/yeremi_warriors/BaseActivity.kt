@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import com.example.yeremi_warriors.About.AboutFragment
 import com.example.yeremi_warriors.Home.HomeFragment
 import com.example.yeremi_warriors.Profile.ProfileFragment
+import com.example.yeremi_warriors.Note.NoteFragment
 import com.example.yeremi_warriors.R
 import com.example.yeremi_warriors.databinding.ActivityBaseBinding
 
@@ -17,9 +18,10 @@ class BaseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // 1. Cek Login
+        // Cek Login
         val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
         val isLogin = sharedPref.getBoolean("isLogin", false)
+
         if (!isLogin) {
             startActivity(Intent(this, LoginActivity::class.java))
             finish()
@@ -29,36 +31,45 @@ class BaseActivity : AppCompatActivity() {
         binding = ActivityBaseBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // 2. Tampilkan HomeFragment saat pertama kali buka
+        // Fragment pertama
         if (savedInstanceState == null) {
             replaceFragment(HomeFragment())
-            binding.bottomNavView.selectedItemId = R.id.menu_home // Paksa highlight ke menu home
+            binding.bottomNavView.selectedItemId = R.id.menu_home
         }
 
-        // 3. Listener Klik Menu
+        // Bottom Navigation
         binding.bottomNavView.setOnItemSelectedListener { item ->
             when (item.itemId) {
+
                 R.id.menu_home -> {
                     replaceFragment(HomeFragment())
                     true
                 }
+
                 R.id.menu_about -> {
                     replaceFragment(AboutFragment())
                     true
                 }
+
                 R.id.menu_profile -> {
                     replaceFragment(ProfileFragment())
                     true
                 }
+
+                R.id.note -> {
+                    replaceFragment(NoteFragment())
+                    true
+                }
+
                 else -> false
             }
         }
     }
 
     private fun replaceFragment(fragment: Fragment) {
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.fragment_container, fragment)
-        fragmentTransaction.commit()
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .commit()
     }
 }

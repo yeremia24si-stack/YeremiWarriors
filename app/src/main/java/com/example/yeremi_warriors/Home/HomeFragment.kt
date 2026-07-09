@@ -9,6 +9,10 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import android.widget.Toast
+import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.coroutines.launch
 import com.example.yeremi_warriors.LoginActivity
 import com.example.yeremi_warriors.databinding.FragmentHomeBinding
 import com.example.yeremi_warriors.Home.pertemuan_3.ThirdActivity
@@ -18,6 +22,11 @@ import com.example.yeremi_warriors.Home.pertemuan_7.SixthActivity
 import com.example.yeremi_warriors.Home.pertemuan_8.EmailGmailActivity
 import com.example.yeremi_warriors.Home.pertemuan_9.NinthActivity
 import com.example.yeremi_warriors.Home.pertemuan_10.TenthActivity
+import com.example.yeremi_warriors.Home.pertemuan_11.TutorialMessageActivity
+import com.example.yeremi_warriors.Home.pertemuan_13.ThirteenthActivity
+import com.example.yeremi_warriors.data.api.CatFactApiClient
+import com.example.yeremi_warriors.data.api.PhotoApiClient
+import com.example.yeremi_warriors.Home.pertemuan_11.PhotoAdapter
 import com.google.android.material.snackbar.Snackbar
 
 class HomeFragment : Fragment() {
@@ -102,6 +111,22 @@ class HomeFragment : Fragment() {
             startActivity(Intent(requireContext(), TenthActivity::class.java))
         }
 
+        // Pertemuan 11
+        binding.btnPertemuan11.setOnClickListener {
+            startActivity(Intent(requireContext(), TutorialMessageActivity::class.java))
+        }
+
+        loadCatFact()
+        loadPhoto()
+
+        binding.btnPertemuan13.setOnClickListener {
+            startActivity(Intent(requireContext(), ThirteenthActivity::class.java))
+        }
+
+        binding.btnRefresh.setOnClickListener {
+            loadCatFact()
+        }
+
         // Logout
         binding.btnLogout.setOnClickListener {
             showLogoutDialog()
@@ -129,6 +154,39 @@ class HomeFragment : Fragment() {
                 Snackbar.make(binding.root, "Logout dibatalkan", Snackbar.LENGTH_SHORT).show()
             }
             .show()
+    }
+
+    private fun loadCatFact() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            try {
+                val response = CatFactApiClient.apiService.getCatFact()
+                binding.tvCatFact.text = response.fact
+            } catch (e: Exception) {
+                binding.tvCatFact.text = "Gagal mengambil data."
+            }
+        }
+    }
+
+    private fun loadPhoto() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            try {
+                val photos = PhotoApiClient.apiService.getPhotos()
+
+                val adapter = PhotoAdapter(photos)
+
+                binding.rvGallery.layoutManager =
+                    LinearLayoutManager(requireContext())
+
+                binding.rvGallery.adapter = adapter
+
+            } catch (e: Exception) {
+                Toast.makeText(
+                    requireContext(),
+                    "Gagal memuat galeri foto",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
     }
 
     override fun onDestroyView() {

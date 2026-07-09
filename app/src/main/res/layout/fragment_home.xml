@@ -6,7 +6,6 @@
     android:orientation="vertical"
     android:background="#F5F5F5">
 
-    <!-- Toolbar -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -14,29 +13,26 @@
         android:background="#2E7D32"
         app:titleTextColor="#FFFFFF" />
 
-    <!-- Konten Scroll -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="vertical"
             android:padding="20dp">
 
             <TextView
                 android:id="@+id/tvTitleMain"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
                 android:text="Dashboard Desa"
                 android:textColor="#2E7D32"
                 android:textSize="26sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:layout_gravity="center_horizontal" />
 
             <TextView
                 android:id="@+id/tvDescMain"
@@ -45,183 +41,185 @@
                 android:layout_marginTop="8dp"
                 android:text="Silahkan pilih layanan desa di bawah ini"
                 android:textColor="#666666"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvTitleMain" />
+                android:layout_gravity="center_horizontal" />
 
+            <!-- Buttons Section -->
             <Button
                 android:id="@+id/btnRumus"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="65dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="24dp"
                 android:backgroundTint="#2E7D32"
                 android:text="Rumus Bangun Ruang"
                 android:textAllCaps="false"
-                android:textSize="16sp"
-                app:cornerRadius="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvDescMain" />
+                app:cornerRadius="12dp" />
 
             <Button
                 android:id="@+id/btnCustom1"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="65dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="12dp"
                 android:backgroundTint="#2E7D32"
                 android:text="Halaman Welcome"
                 android:textAllCaps="false"
-                android:textSize="16sp"
-                app:cornerRadius="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btnRumus" />
+                app:cornerRadius="12dp" />
 
             <Button
                 android:id="@+id/btnCustom2"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="65dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="12dp"
                 android:backgroundTint="#2E7D32"
-                android:text="Info Layanan (Custom 2)"
+                android:text="Informasi Desa"
                 android:textAllCaps="false"
-                android:textSize="16sp"
-                app:cornerRadius="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btnCustom1" />
+                app:cornerRadius="12dp" />
 
             <Button
                 android:id="@+id/btnWebView"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="65dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="12dp"
                 android:backgroundTint="#2E7D32"
                 android:text="Bina Desa (WebView)"
                 android:textAllCaps="false"
-                android:textSize="16sp"
-                app:cornerRadius="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btnCustom2" />
+                app:cornerRadius="12dp" />
 
             <Button
                 android:id="@+id/btnPertemuan3"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="65dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="12dp"
                 android:backgroundTint="#2E7D32"
                 android:text="Pertemuan 3"
                 android:textAllCaps="false"
-                android:textSize="16sp"
-                app:cornerRadius="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btnWebView" />
+                app:cornerRadius="12dp" />
 
             <Button
                 android:id="@+id/btnPertemuan4"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="65dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="12dp"
                 android:backgroundTint="#2E7D32"
                 android:text="Pertemuan 4"
                 android:textAllCaps="false"
-                android:textSize="16sp"
-                app:cornerRadius="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btnPertemuan3" />
+                app:cornerRadius="12dp" />
 
             <Button
                 android:id="@+id/btnPertemuan5"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="65dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="12dp"
                 android:backgroundTint="#2E7D32"
                 android:text="Pertemuan 5"
                 android:textAllCaps="false"
-                android:textSize="16sp"
-                app:cornerRadius="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btnPertemuan4" />
+                app:cornerRadius="12dp" />
 
-            <!-- Tambahan Pertemuan 6 -->
             <Button
                 android:id="@+id/btnPertemuan6"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="65dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="12dp"
                 android:backgroundTint="#2E7D32"
                 android:text="Pertemuan 6"
                 android:textAllCaps="false"
-                android:textSize="16sp"
-                app:cornerRadius="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btnPertemuan5" />
+                app:cornerRadius="12dp" />
 
-            <!-- Tambahan Pertemuan 8 -->
             <Button
                 android:id="@+id/btnPertemuan8"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="65dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="12dp"
                 android:backgroundTint="#2E7D32"
                 android:text="Pertemuan 8"
                 android:textAllCaps="false"
-                android:textSize="16sp"
-                app:cornerRadius="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btnPertemuan6" />
+                app:cornerRadius="12dp" />
 
             <Button
                 android:id="@+id/btnPertemuan9"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="65dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="12dp"
                 android:backgroundTint="#2E7D32"
                 android:text="Pertemuan 9"
                 android:textAllCaps="false"
-                android:textSize="16sp"
-                app:cornerRadius="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btnPertemuan8" />
+                app:cornerRadius="12dp" />
 
             <Button
                 android:id="@+id/btnPertemuan10"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="65dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="12dp"
                 android:backgroundTint="#2E7D32"
                 android:text="Pertemuan 10"
                 android:textAllCaps="false"
-                android:textSize="16sp"
-                app:cornerRadius="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btnPertemuan9" />
+                app:cornerRadius="12dp" />
+
+            <Button
+                android:id="@+id/btnPertemuan11"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="#2E7D32"
+                android:text="Pertemuan 11"
+                android:textAllCaps="false"
+                app:cornerRadius="12dp" />
+
+            <Button
+                android:id="@+id/btnPertemuan13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pertemuan 13"
+                android:backgroundTint="#2E7D32" />
 
             <Button
                 android:id="@+id/btnLogout"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginTop="24dp"
                 android:backgroundTint="#D32F2F"
                 android:text="Logout"
-                android:textSize="16sp"
-                app:cornerRadius="12dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btnPertemuan10" />
+                app:cornerRadius="12dp" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            <!-- Gallery Section -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="32dp"
+                android:background="#DDDDDD" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Fakta Kucing &amp; Galeri"
+                android:textColor="#2E7D32"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvCatFact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="#E8F5E9"
+                android:padding="12dp"
+                android:text="Memuat fakta..."
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/btnRefresh"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Refresh Fakta" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvGallery"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:nestedScrollingEnabled="false" />
+
+        </LinearLayout>
     </ScrollView>
-
 </LinearLayout>
